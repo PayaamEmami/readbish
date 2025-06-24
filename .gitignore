@@ -1,0 +1,59 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+coverage/
+lib/
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Pulumi
+infra/aws/__pycache__/
+infra/aws/bin/
+infra/aws/.pulumi/
+infra/aws/Pulumi.*
+*.bak
+
+# React Native
+*.xcworkspace
+*.xcodeproj
+*.xcuserstate
+*.xcuserdata
+*.lock
+android/.gradle
+android/app/build/
+ios/Pods/
+ios/build/
+*.keystore
+
+# Misc
+*.log
+*.tmp
+*.temp
+
+# S3/Audio/Uploads (if stored locally during dev)
+uploads/
+audio/

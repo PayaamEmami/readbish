@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["dom", "esnext"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@packages/*": ["packages/*"],
+      "@apps/*": ["apps/*"],
+      "@backend/*": ["backend/src/*"]
+    }
+  },
+  "include": [
+    "apps/**/*",
+    "backend/**/*",
+    "packages/**/*",
+    "scripts/**/*",
+    "infra/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

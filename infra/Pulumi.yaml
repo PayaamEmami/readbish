@@ -1,0 +1,31 @@
+name: readbish
+runtime: nodejs
+description: Infrastructure configuration for the Readbish application
+stack: aws
+
+config:
+  aws:
+    region: us-east-1
+
+resources:
+  # Define your AWS resources here
+  # Example: S3 bucket for file storage
+  s3:
+    bucket:
+      name: readbish-bucket
+      acl: private
+
+  # Example: RDS instance for database
+  rds:
+    instance:
+      engine: postgres
+      instanceClass: db.t2.micro
+      allocatedStorage: 20
+      username: admin
+      password: ${env:DB_PASSWORD}
+      dbName: readbish_db
+      skipFinalSnapshot: true
+
+outputs:
+  bucketName: ${s3.bucket.name}
+  dbEndpoint: ${rds.instance.endpoint}

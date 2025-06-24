@@ -1,0 +1,26 @@
+{
+  "name": "readbish-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "main": "App.tsx",
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-native": "0.64.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.2",
+    "@types/react-native": "0.64.2",
+    "jest": "27.0.6",
+    "ts-jest": "27.0.6",
+    "typescript": "4.4.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
