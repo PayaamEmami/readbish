@@ -14,14 +14,13 @@
     "lint": "npm run lint --workspaces"
   },
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
+    "@eslint/js": "^8.57.0",
     "@types/pg": "^8.15.4",
     "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
-    "eslint": "^9.29.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^10.1.5",
-    "typescript": "^4.0.0",
-    "typescript-eslint": "^8.35.0"
+    "typescript": "^4.5.4"
   },
   "type": "module"
 }
