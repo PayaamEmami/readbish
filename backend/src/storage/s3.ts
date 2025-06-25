@@ -13,7 +13,8 @@ export const uploadFile = async (bucketName: string, key: string, body: Buffer |
         const data = await s3.upload(params).promise();
         return data.Location;
     } catch (error) {
-        throw new Error(`Error uploading file: ${error.message}`);
+        const err = error instanceof Error ? error : new Error(String(error));
+        throw new Error(`Error uploading file: ${err.message}`);
     }
 };
 
@@ -27,7 +28,8 @@ export const getFile = async (bucketName: string, key: string) => {
         const data = await s3.getObject(params).promise();
         return data.Body;
     } catch (error) {
-        throw new Error(`Error getting file: ${error.message}`);
+        const err = error instanceof Error ? error : new Error(String(error));
+        throw new Error(`Error getting file: ${err.message}`);
     }
 };
 
@@ -40,6 +42,7 @@ export const deleteFile = async (bucketName: string, key: string) => {
     try {
         await s3.deleteObject(params).promise();
     } catch (error) {
-        throw new Error(`Error deleting file: ${error.message}`);
+        const err = error instanceof Error ? error : new Error(String(error));
+        throw new Error(`Error deleting file: ${err.message}`);
     }
 };

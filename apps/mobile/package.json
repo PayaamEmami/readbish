@@ -8,7 +8,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "jest",
-    "lint": "echo No linting configured for mobile yet"
+    "lint": "echo No linting configured for mobile yet",
+    "build": "tsc"
   },
   "dependencies": {
     "react": "17.0.2",
