@@ -15,8 +15,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.57.0",
-    "@types/pg": "^8.15.4",
     "@types/node": "^20.12.12",
+    "@types/pg": "^8.15.4",
     "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
     "eslint": "^8.57.0",
@@ -29,8 +29,11 @@
     "@pulumi/aws": "^6.83.0",
     "@pulumi/pulumi": "^3.178.0",
     "@types/bcryptjs": "^2.4.6",
+    "@types/dotenv": "^6.1.1",
     "@types/uuid": "^10.0.0",
     "bcryptjs": "^3.0.2",
+    "dotenv": "^16.5.0",
+    "pg": "^8.16.2",
     "uuid": "^11.1.0"
   }
 }

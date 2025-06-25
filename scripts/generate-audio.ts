@@ -24,6 +24,9 @@ async function generateAudio(filePath: string): Promise<string> {
 }
 
 async function uploadToS3(filePath: string, key: string): Promise<void> {
+    if (!BUCKET_NAME) {
+        throw new Error('AWS_S3_BUCKET_NAME is not set');
+    }
     const fileStream = createReadStream(filePath);
     const uploadParams = {
         Bucket: BUCKET_NAME,
