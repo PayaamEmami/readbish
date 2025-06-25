@@ -13,7 +13,15 @@
     "lint": "lerna run lint"
   },
   "devDependencies": {
-    "lerna": "^4.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "lerna": "^8.2.2",
+    "prettier": "^3.6.0",
     "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "react-native": "0.80.0"
   }
 }
