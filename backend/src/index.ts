@@ -1,25 +1,12 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { createServer } from 'http';
-import { inferAsyncReturnType, initTRPC } from '@trpc/server';
-import { createContext } from './utils';
-import { appRouter } from './routes';
-
-const createContextHandler = ({ req, res }) => {
-  return createContext({ req, res });
-};
+import router from './routes';
 
 const app = express();
 const server = createServer(app);
 
-const tRPC = initTRPC.create({
-  createContext: createContextHandler,
-});
-
-app.use('/trpc', tRPC.createExpressMiddleware({ router: appRouter }));
-
-app.get('/', (req, res) => {
-  res.send('Welcome to Readbish API');
-});
+app.use(express.json());
+app.use('/', router);
 
 const PORT = process.env.PORT || 4000;
 

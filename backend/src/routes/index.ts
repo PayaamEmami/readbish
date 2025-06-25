@@ -1,9 +1,12 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
+import authRoutes from './auth';
 
 const router = Router();
 
+router.use('/auth', authRoutes);
+
 // Example route
-router.get('/', (req, res) => {
+router.get('/', (req: Request, res: Response) => {
     res.send('Welcome to the Readbish API!');
 });
 
