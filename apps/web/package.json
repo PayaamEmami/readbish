@@ -18,11 +18,12 @@
   "devDependencies": {
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/node": "^20.12.12",
     "eslint": "^8.57.0",
     "eslint-config-next": "latest",
     "prettier": "latest",
     "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
-    "typescript": "^4.5.4"
+    "typescript": "^5.4.5"
   }
 }
