@@ -1,16 +1,17 @@
 import { S3 } from 'aws-sdk';
-import { createReadStream, createWriteStream } from 'fs';
+import { createReadStream } from 'fs';
 import { join } from 'path';
-import { promisify } from 'util';
-import { pipeline } from 'stream';
 import { v4 as uuidv4 } from 'uuid';
 
-const pipelineAsync = promisify(pipeline);
 const s3 = new S3();
 
 const BUCKET_NAME = process.env.AWS_S3_BUCKET_NAME;
 
-async function generateAudio(filePath: string): Promise<string> {
+if (!BUCKET_NAME) {
+    throw new Error('AWS_S3_BUCKET_NAME environment variable is not set.');
+}
+
+async function generateAudio(): Promise<string> {
     const audioFileName = `${uuidv4()}.mp3`;
     const audioFilePath = join(__dirname, audioFileName);
 
@@ -24,12 +25,9 @@ async function generateAudio(filePath: string): Promise<string> {
 }
 
 async function uploadToS3(filePath: string, key: string): Promise<void> {
-    if (!BUCKET_NAME) {
-        throw new Error('AWS_S3_BUCKET_NAME is not set');
-    }
     const fileStream = createReadStream(filePath);
     const uploadParams = {
-        Bucket: BUCKET_NAME,
+        Bucket: BUCKET_NAME as string, // ensure type is string
         Key: key,
         Body: fileStream,
     };
@@ -44,7 +42,7 @@ if (require.main === module) {
         process.exit(1);
     }
 
-    generateAudio(filePath)
+    generateAudio()
         .then((audioFileName) => {
             console.log(`Audio generated and uploaded: ${audioFileName}`);
         })
