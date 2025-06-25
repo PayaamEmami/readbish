@@ -4,7 +4,8 @@
   "main": "useExample.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "echo No linting configured for hooks yet"
   },
   "dependencies": {
     "lerna": "8.2.2",

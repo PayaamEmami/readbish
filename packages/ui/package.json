@@ -5,7 +5,8 @@
   "main": "Button.tsx",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "lint": "echo No linting configured for ui yet"
   },
   "keywords": [
     "react",
