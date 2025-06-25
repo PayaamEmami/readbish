@@ -9,7 +9,7 @@ export const generateToken = (payload: object, expiresIn: string | number = '1h'
 export const verifyToken = (token: string): object | null => {
     try {
         return verify(token, SECRET_KEY) as object;
-    } catch (error) {
+    } catch {
         return null;
     }
 };
