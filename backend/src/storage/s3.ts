@@ -1,48 +1,16 @@
-import { S3 } from 'aws-sdk';
+// S3 stubs for local/dev: Replace with real AWS logic when infra is ready
 
-const s3 = new S3();
-
-export const uploadFile = async (bucketName: string, key: string, body: Buffer | string) => {
-    const params = {
-        Bucket: bucketName,
-        Key: key,
-        Body: body,
-    };
-
-    try {
-        const data = await s3.upload(params).promise();
-        return data.Location;
-    } catch (error) {
-        const err = error instanceof Error ? error : new Error(String(error));
-        throw new Error(`Error uploading file: ${err.message}`);
-    }
+export const uploadFile = async () => {
+    // TODO: Implement real S3 upload when AWS is ready
+    throw new Error('S3 uploadFile not implemented: no cloud infrastructure configured.');
 };
 
-export const getFile = async (bucketName: string, key: string) => {
-    const params = {
-        Bucket: bucketName,
-        Key: key,
-    };
-
-    try {
-        const data = await s3.getObject(params).promise();
-        return data.Body;
-    } catch (error) {
-        const err = error instanceof Error ? error : new Error(String(error));
-        throw new Error(`Error getting file: ${err.message}`);
-    }
+export const getFile = async () => {
+    // TODO: Implement real S3 get when AWS is ready
+    throw new Error('S3 getFile not implemented: no cloud infrastructure configured.');
 };
 
-export const deleteFile = async (bucketName: string, key: string) => {
-    const params = {
-        Bucket: bucketName,
-        Key: key,
-    };
-
-    try {
-        await s3.deleteObject(params).promise();
-    } catch (error) {
-        const err = error instanceof Error ? error : new Error(String(error));
-        throw new Error(`Error deleting file: ${err.message}`);
-    }
+export const deleteFile = async () => {
+    // TODO: Implement real S3 delete when AWS is ready
+    throw new Error('S3 deleteFile not implemented: no cloud infrastructure configured.');
 };
