@@ -98,6 +98,30 @@ readbish/
 
 ---
 
+## 🛠️ Development Setup
+
+### Web (Next.js)
+
+1. Navigate to the web app:
+   ```bash
+   cd apps/web
+   npm install
+   npm run dev
+   ```
+2. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Mobile (React Native with Expo)
+
+1. Navigate to the mobile app:
+   ```bash
+   cd apps/mobile
+   npm install
+   npx expo start
+   ```
+2. Scan the QR code with the Expo Go app on your phone.
+
+---
+
 ## 📘 License
 
 Copyright (c) 2025 Payaam Emami
