@@ -58,26 +58,26 @@ Below is a high-level overview of the project layout:
 ```python
 readbish/
 ├── apps/                         # Entry points for client apps
-│   ├── web/                      # Next.js app (web interface)
 │   └── mobile/                   # React Native app
+│   ├── web/                      # Next.js app (web interface)
 │
 ├── backend/                      # Backend API server
 │   ├── src/
+│   │   ├── auth/                 # JWT auth logic
+│   │   ├── db/                   # Database setup and queries
+│   │   ├── llm/                  # OpenAI GPT integration
 │   │   ├── routes/               # tRPC routers
 │   │   ├── services/             # Business logic (e.g., TTS, doc parsing)
-│   │   ├── db/                   # Database setup and queries
-│   │   ├── auth/                 # JWT auth logic
 │   │   ├── storage/              # AWS S3 integrations
-│   │   ├── llm/                  # OpenAI GPT integration
 │   │   ├── utils/                # Shared helpers
 │   │   └── index.ts              # Entry point for tRPC server
 │   ├── package.json
 │   └── tsconfig.json
 │
 ├── packages/                     # Shared code across apps
-│   ├── ui/                       # Shared UI components (if using across web/mobile)
 │   ├── hooks/                    # Shared React hooks
 │   ├── types/                    # Global TypeScript types
+│   ├── ui/                       # Shared UI components (if using across web/mobile)
 │   └── utils/                    # Shared utilities
 │
 ├── infra/                        # Infrastructure as Code (Pulumi)
