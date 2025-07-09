@@ -1,6 +1,13 @@
 // S3 stubs for local/dev: Replace with real AWS logic when infra is ready
 
-export const uploadFile = async () => {
+export interface UploadFileParams {
+  key: string;
+  body: Buffer;
+  contentType: string;
+}
+
+export const uploadFile = async (params: UploadFileParams) => {
+    void params; // Prevent unused variable lint error
     // TODO: Implement real S3 upload when AWS is ready
     throw new Error('S3 uploadFile not implemented: no cloud infrastructure configured.');
 };
